@@ -18,11 +18,16 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
+// import router from "./starterRouter";
 import Argon from "./plugins/argon-kit";
-import './registerServiceWorker'
+import './registerServiceWorker';
+import axios from 'axios';
+import translations from "@/lang/Translations";
 
 Vue.config.productionTip = false;
 Vue.use(Argon);
+window.Vue = Vue;
+window.axios = axios;
 new Vue({
   router,
   render: h => h(App)
