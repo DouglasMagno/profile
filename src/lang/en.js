@@ -1,7 +1,8 @@
 let lang = {
 
 	"profession": "Software Developer",
-	"university": "Universidade do Estado de Minas Gerais",
+	"university": "Minas Gerais State University",
+	"portfolio": "Portfolio"
 
 };
 

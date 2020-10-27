@@ -1,7 +1,7 @@
 <template>
     <div class="profile-page">
         <section class="section-profile-cover section-shaped my-0">
-            <div class="shape shape-style-1 shape-primary shape-skew alpha-4">
+            <div class="shape shape-style-1 shape-primary shape-skew alpha-4 blue">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -55,7 +55,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-9">
                                     <p>{{user.bio}}</p>
-                                    <a href="https://www.linkedin.com/in/dougmagno/">Show more</a>
+                                    <a href="https://www.linkedin.com/in/dougmagno/">See more</a>
                                 </div>
                             </div>
                         </div>
@@ -91,5 +91,8 @@ export default {
   }
 };
 </script>
-<style>
+<style lang="scss">
+  .blue {
+    background: linear-gradient(150deg, #034aba 15%, #9c80d4 70%, #02f5fe 94%) !important;
+  }
 </style>

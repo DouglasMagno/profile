@@ -4,7 +4,7 @@ const translate = (key) => {
 	// this.lang = lang;
 	// this.defaultLang = Settings.defaultLocale;
 	// Settings.defaultLocale = lang;
-	const lang = 'pt-br';
+	const lang = 'en';
 	try {
 		const m = require('./' + lang + '.js');
 		var messages = require('./'+lang+'.js');
