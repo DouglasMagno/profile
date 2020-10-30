@@ -4,22 +4,22 @@
         <div class="row">
           <div class="col-md-4 mb-5 mb-md-0">
             <div class="card card-lift--hover shadow border-0">
-              <router-link to="/landing" title="Landing Page">
-                <img v-lazy="'img/theme/landing.jpg'" class="card-img">
+              <router-link to="/landing" title="FrontEnd">
+                <img v-lazy="'img/theme/frontend.jpg'" class="card-img">
               </router-link>
             </div>
           </div>
           <div class="col-md-4 mb-5 mb-lg-0">
             <div class="card card-lift--hover shadow border-0">
-              <router-link to="/profile" title="Profile Page">
-                <img v-lazy="'img/theme/profile.jpg'" class="card-img">
+              <router-link to="/profile" title="BackEnd">
+                <img v-lazy="'img/theme/backend.jpg'" class="card-img">
               </router-link>
             </div>
           </div>
           <div class="col-md-4 mb-5 mb-lg-0">
             <div class="card card-lift--hover shadow border-0">
-              <router-link to="/profile" title="Profile Page">
-                <img v-lazy="'img/theme/profile.jpg'" class="card-img">
+              <router-link to="/profile" title="Artificial intelligence">
+                <img v-lazy="'img/theme/ai.jpg'" class="card-img">
               </router-link>
             </div>
           </div>

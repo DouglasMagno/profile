@@ -14,7 +14,7 @@
             <div class="row row-grid justify-content-between align-items-center">
                 <div class="col-lg-6">
                     <h3 class="display-3 text-white">A beautiful Design System
-                        <span class="text-white">completed with examples</span>
+                        <span class="text-white">completed with my jobs</span>
                     </h3>
                     <p class="lead text-white">The Design System comes with four pre-built pages to help you get started
                         faster. You can change the text and images and you're good to go. More importantly, looking at

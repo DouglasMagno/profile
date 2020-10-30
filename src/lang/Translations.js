@@ -1,4 +1,3 @@
-import { Settings } from 'luxon';
 const translate = (key) => {
 
 	// this.lang = lang;

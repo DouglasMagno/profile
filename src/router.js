@@ -7,6 +7,7 @@ import Landing from "./views/Landing.vue";
 import Login from "./views/Login.vue";
 import Register from "./views/Register.vue";
 import Profile from "./views/Profile.vue";
+import Project from "@/views/Project";
 
 Vue.use(Router);
 
@@ -18,7 +19,7 @@ export default new Router({
       name: "components",
       components: {
         header: AppHeader,
-        default: Components,
+        default: Profile,
         footer: AppFooter
       }
     },
@@ -32,24 +33,6 @@ export default new Router({
       }
     },
     {
-      path: "/login",
-      name: "login",
-      components: {
-        header: AppHeader,
-        default: Login,
-        footer: AppFooter
-      }
-    },
-    {
-      path: "/register",
-      name: "register",
-      components: {
-        header: AppHeader,
-        default: Register,
-        footer: AppFooter
-      }
-    },
-    {
       path: "/profile",
       name: "profile",
       components: {
@@ -57,7 +40,34 @@ export default new Router({
         default: Profile,
         footer: AppFooter
       }
+    },
+    {
+      path: "/project",
+      name: "project",
+      components: {
+        header: AppHeader,
+        default: Project,
+        footer: AppFooter
+      }
     }
+    // {
+    //   path: "/login",
+    //   name: "login",
+    //   components: {
+    //     header: AppHeader,
+    //     default: Login,
+    //     footer: AppFooter
+    //   }
+    // },
+    // {
+    //   path: "/register",
+    //   name: "register",
+    //   components: {
+    //     header: AppHeader,
+    //     default: Register,
+    //     footer: AppFooter
+    //   }
+    // },
   ],
   scrollBehavior: to => {
     if (to.hash) {

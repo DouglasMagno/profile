@@ -11,8 +11,8 @@
                     </a>
                     <router-link to="/landing" class="dropdown-item">Landing</router-link>
                     <router-link to="/profile" class="dropdown-item">Profile</router-link>
-                    <router-link to="/login" class="dropdown-item">Login</router-link>
-                    <router-link to="/register" class="dropdown-item">Register</router-link>
+<!--                    <router-link to="/login" class="dropdown-item">Login</router-link>-->
+<!--                    <router-link to="/register" class="dropdown-item">Register</router-link>-->
                 </base-dropdown>
             </ul>
             <ul class="navbar-nav align-items-lg-center ml-lg-auto">
