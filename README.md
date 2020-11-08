@@ -1,4 +1,4 @@
-# Stock Api
+# Profile
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://douglasmagno.github.io/profile)
 
