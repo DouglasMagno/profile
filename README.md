@@ -52,7 +52,7 @@
 <ul>
   <li><a href="https://github.com/creativetimofficial/vue-argon-design-system/archive/master.zip">Download from Github</a>.</li>
   <li><a href="https://www.creative-tim.com/product/vue-argon-design-system">Download from Creative Tim</a>.</li>
-  <li>Clone the repo: <code class="highlighter-rouge">git clone https://github.com/creativetimofficial/vue-argon-design-system.git</code>.</li>
+  <li>Clone the repo: <code class="highlighter-rouge">git clone https://githubService.com/creativetimofficial/vue-argon-design-system.git</code>.</li>
 </ul>
 
 <h2 id="documentation">Documentation</h2>
@@ -176,7 +176,7 @@
     <p>Copyright © 2018 Creative Tim (https://www.creative-tim.com)</p>
   </li>
   <li>
-    <p>Licensed under MIT (https://github.com/creativetimofficial/vue-argon-design-system/blob/master/LICENSE.md)</p>
+    <p>Licensed under MIT (https://githubService.com/creativetimofficial/vue-argon-design-system/blob/master/LICENSE.md)</p>
   </li>
 </ul>
 

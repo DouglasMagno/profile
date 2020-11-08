@@ -47,7 +47,7 @@
                                         <badge type="primary" rounded>React</badge>
                                         <badge type="primary" rounded>CSS3</badge>
                                     </div>
-                                    <base-button tag="a" href="#" type="primary" class="mt-4">
+                                    <base-button tag="a" href="#/projects?tags=frontend" type="primary" class="mt-4">
                                         Learn more
                                     </base-button>
                                 </card>
@@ -63,7 +63,7 @@
                                         <badge type="success" rounded>Node</badge>
                                         <badge type="success" rounded>Python</badge>
                                     </div>
-                                    <base-button tag="a" href="#" type="success" class="mt-4">
+                                    <base-button tag="a" href="#/projects?tags=backend" type="success" class="mt-4">
                                         Learn more
                                     </base-button>
                                 </card>
@@ -79,7 +79,7 @@
                                         <badge type="warning" rounded>Python</badge>
                                         <badge type="warning" rounded>Machine Learning</badge>
                                     </div>
-                                    <base-button tag="a" href="#" type="warning" class="mt-4">
+                                    <base-button tag="a" href="#/projects?tags=ai" type="warning" class="mt-4">
                                         Learn more
                                     </base-button>
                                 </card>

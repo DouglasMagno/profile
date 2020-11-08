@@ -18,10 +18,9 @@
           <div class="col px-0">
             <div class="row">
               <div class="col-lg-6">
-                <h1 class="display-3  text-white">{{ project.title }}
-                  <span>{{Object.keys(project.languages).join(', ')}}</span>
+                <h1 class="display-3  text-white">Blog
+                  <span>Follow me in my medium blog to great stories!</span>
                 </h1>
-                <p class="lead  text-white">{{project.description}}</p>
 
               </div>
             </div>
@@ -34,10 +33,17 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-12">
-            <h2 class="mb-5"><span>Readme</span></h2>
-            <div class="Box-body px-5 pb-5">
-              <article v-html="project.readme" class="markdown-body entry-content container-lg" itemprop="text">
-              </article>
+            <h2 class="mb-5"><span id="list">Stories</span></h2>
+            <div v-if="!!stories.length" class="row row-grid" v-for="(story, key) in stories" :key="key">
+                <div class="col-sm-3">
+                  <small class="text-uppercase text-muted font-weight-bold"><a :href="story.link" target="_blank">{{ story.title }}</a></small>
+                </div>
+                <div class="col-sm-9">
+                  <p v-html="story.description"></p>
+                </div>
+            </div>
+            <div v-if="!!!stories.length">
+              Coming soon!
             </div>
           </div>
         </div>
@@ -47,30 +53,26 @@
 </template>
 
 <script>
-import MarkdownIt from 'markdown-it';
-import {getRepository} from "@/services/github.service";
+import {feed} from "@/services/medium.service";
 export default {
-  name: "Project",
+  name: "Stories",
+  components: {
+  },
   data(){
     return {
-      project: {
-        title: "...",
-        description: "...",
-        readme: "...",
-        defaultBranch: '...',
-        languages: {
-          "...": 0,
-        }
-      },
+      stories: [],
+      tags: '',
     };
   },
   methods: {
-    async loadProject() {
-      await getRepository(this.$route.params.projectId, this.project);
+    async loadStories() {
+      feed().then((response) => {
+        this.$set(this, "stories", response.data.items);
+      });
     }
   },
   mounted() {
-    this.loadProject();
+    this.loadStories();
   }
 }
 </script>

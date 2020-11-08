@@ -18,10 +18,13 @@
           <div class="col px-0">
             <div class="row">
               <div class="col-lg-6">
-                <h1 class="display-3  text-white">{{ project.title }}
-                  <span>{{Object.keys(project.languages).join(', ')}}</span>
+                <h1 class="display-3  text-white">Here are all my projects
+                  <base-input placeholder="Search"
+                              v-model="tags"
+                              @keyup.enter="setRoute()"
+                              addon-left-icon="ni ni-zoom-split-in">
+                  </base-input>
                 </h1>
-                <p class="lead  text-white">{{project.description}}</p>
 
               </div>
             </div>
@@ -34,11 +37,10 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-12">
-            <h2 class="mb-5"><span>Readme</span></h2>
-            <div class="Box-body px-5 pb-5">
-              <article v-html="project.readme" class="markdown-body entry-content container-lg" itemprop="text">
-              </article>
-            </div>
+            <h2 class="mb-5"><span id="list">List</span></h2>
+              <List
+                :list="repositories"
+              />
           </div>
         </div>
       </div>
@@ -47,30 +49,43 @@
 </template>
 
 <script>
-import MarkdownIt from 'markdown-it';
-import {getRepository} from "@/services/github.service";
+import List from "@/views/components/List";
+import {repositories} from "@/services/github.service";
 export default {
   name: "Project",
+  components: {
+    List
+  },
   data(){
     return {
-      project: {
-        title: "...",
-        description: "...",
-        readme: "...",
-        defaultBranch: '...',
-        languages: {
-          "...": 0,
-        }
-      },
+      repositories: [{
+        name: '...',
+        description: '...',
+        language: '...'
+      }],
+      tags: '',
     };
   },
   methods: {
-    async loadProject() {
-      await getRepository(this.$route.params.projectId, this.project);
+    async loadRepositories() {
+      repositories(this.$route.query.tags || '').then((response) => {
+        if (response.data.items){
+          this.$set(this, "repositories", response.data.items);
+        }else{
+          this.$set(this, "repositories", response.data);
+        }
+      });
+    },
+    async setRoute(){
+      if (this.$route.query.tags !== this.tags){
+        await this.$router.push({path: '/projects', query: {tags: this.tags}});
+        await this.loadRepositories();
+        this.$el.querySelector('#list').scrollIntoView({behavior: 'smooth'});
+      }
     }
   },
   mounted() {
-    this.loadProject();
+    this.loadRepositories();
   }
 }
 </script>

@@ -55,7 +55,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-9">
                                     <p>{{user.bio}}</p>
-                                    <a href="https://www.linkedin.com/in/dougmagno/">See more</a>
+                                    <a href="#/landing">See more</a>
                                 </div>
                             </div>
                         </div>
@@ -67,6 +67,7 @@
 </template>
 <script>
 import translate from "@/lang/Translations";
+import {profile} from "@/services/github.service";
 export default {
   data(){
     return {
@@ -83,10 +84,10 @@ export default {
     }
   },
   mounted() {
-    window.axios.get('https://api.github.com/users/DouglasMagno').then((response) => {
-      this.user.name = response.data.name;
-      this.user.avatar_url = response.data.avatar_url;
-      this.user.bio = response.data.bio;
+    profile().then((response) => {
+        this.user.name = response.data.name;
+        this.user.avatar_url = response.data.avatar_url;
+        this.user.bio = response.data.bio;
     });
   }
 };

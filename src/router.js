@@ -8,6 +8,8 @@ import Login from "./views/Login.vue";
 import Register from "./views/Register.vue";
 import Profile from "./views/Profile.vue";
 import Project from "@/views/Project";
+import Projects from "@/views/Projects";
+import Blog from "@/views/Blog";
 
 Vue.use(Router);
 
@@ -42,11 +44,29 @@ export default new Router({
       }
     },
     {
-      path: "/project",
+      path: "/project/:projectId",
       name: "project",
       components: {
         header: AppHeader,
         default: Project,
+        footer: AppFooter
+      }
+    },
+    {
+      path: "/projects/",
+      name: "projects",
+      components: {
+        header: AppHeader,
+        default: Projects,
+        footer: AppFooter
+      }
+    },
+    {
+      path: "/blog/",
+      name: "blog",
+      components: {
+        header: AppHeader,
+        default: Blog,
         footer: AppFooter
       }
     }
